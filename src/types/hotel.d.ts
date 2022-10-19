@@ -65,4 +65,6 @@ export interface HotelDetails {
   ratePlans: RoomRatePlan[];
 }
 
-export interface HotelWithDetails extends Hotel, HotelDetails {}
+export interface HotelWithDetails extends Hotel, HotelDetails {
+  availableRooms: Room[];
+}

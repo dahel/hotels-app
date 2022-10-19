@@ -1,6 +1,4 @@
 import styled from '@emotion/styled';
-import { media } from 'theme/theme';
-import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Card from '@mui/material/Card';
 
@@ -43,14 +41,4 @@ export const RatingStyled = styled(Rating)`
 export const CardStyled = styled(Card)`
   padding: 15px;
   margin: 15px 0;
-`;
-
-export const RoomRow = styled.div`
-  padding: 15px;
-  border: solid 1px black;
-`;
-
-export const Column = styled.div`
-  display: flex;
-  flex-direction: column;
 `;

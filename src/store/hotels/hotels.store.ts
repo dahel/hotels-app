@@ -5,7 +5,7 @@ const getHotelFullInfo = async (hotel: Hotel): Promise<HotelWithDetails> => {
   const response = await fetch(`https://obmng.dbm.guestline.net/api/roomRates/OBMNG/${hotel.id}`);
   const data: Awaited<Promise<HotelDetails>> = await response.json();
 
-  return { ...hotel, ...data };
+  return { ...hotel, ...data, availableRooms: [] };
 };
 
 interface BearState {

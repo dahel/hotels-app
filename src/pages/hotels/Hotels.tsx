@@ -32,7 +32,7 @@ const Hotels = () => {
         childrenAmount={childrenAmount}
         onChange={handleFilterChange}
       />
-      <HotelsList items={filteredHotels} />
+      <HotelsList hotels={filteredHotels} />
     </>
   );
 };

@@ -1,0 +1,77 @@
+[
+  {
+    "id": "1",
+    "rooms": [
+      {
+        "id": "AAA",
+        "name": "AAA Room (adults:1, children: 0)",
+        "shortDescription": "this is AAA room",
+        "occupancy": {
+          "maxAdults": 1,
+          "maxChildren": 0,
+          "maxOverall": 1
+        }
+      },
+      {
+        "id": "BBB",
+        "name": "BBB Room (adults: 2, children: 5)",
+        "shortDescription": "this is BBB room",
+        "occupancy": {
+          "maxAdults": 2,
+          "maxChildren": 5,
+          "maxOverall": 7
+        }
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "rooms": [
+      {
+        "id": "CCC",
+        "name": "CCC Room (adults: 2, children: 2)",
+        "shortDescription": "this is CCC room",
+        "occupancy": {
+          "maxAdults": 2,
+          "maxChildren": 2,
+          "maxOverall": 4
+        }
+      },
+      {
+        "id": "DDD",
+        "name": "DDD Room (adults: 3, children: 3)",
+        "shortDescription": "this is DDD room",
+        "occupancy": {
+          "maxAdults": 3,
+          "maxChildren": 3,
+          "maxOverall": 6
+        }
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "rooms": [
+      {
+        "id": "EEE",
+        "name": "EEE Room (adults: 2, children: 2)",
+        "shortDescription": "this is EEE room",
+        "occupancy": {
+          "maxAdults": 2,
+          "maxChildren": 2,
+          "maxOverall": 4
+        }
+      },
+      {
+        "id": "FFF",
+        "name": "FFF Room (adults: 3, children: 3)",
+        "shortDescription": "this is FFF room",
+        "occupancy": {
+          "maxAdults": 3,
+          "maxChildren": 3,
+          "maxOverall": 6
+        }
+      }
+    ]
+  }
+]

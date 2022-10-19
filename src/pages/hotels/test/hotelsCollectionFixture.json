@@ -1,0 +1,41 @@
+[
+  {
+    "id": "1",
+    "name": "Hotel 1 (2 stars)",
+    "description": "Etag for the win chocolate biscuit wafer soufflé toffee toffee donut. Tart biscuit wafer pudding chocolate cake oat cake halvah\r\nMarshmallow halvah gingerbread apple pie muffin biscuit. Cake pudding topping pie lemon drops lollipop. Bear claw oat cake jelly beans. Bonbon toffee caramels pudding gingerbread cookie lollipop.",
+    "address1": "Shrewsbury",
+    "address2": "Address 1",
+    "starRating": "2",
+    "images": [
+      {
+        "url": "https://rl-uk2.azureedge.net/picturemanager/images/OBMNG1/Hotel1.JPG"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Hotel 2 (3 stars)",
+    "description": "Etag for the win chocolate biscuit wafer soufflé toffee toffee donut. Tart biscuit wafer pudding chocolate cake oat cake halvah\r\nMarshmallow halvah gingerbread apple pie muffin biscuit. Cake pudding topping pie lemon drops lollipop. Bear claw oat cake jelly beans. Bonbon toffee caramels pudding gingerbread cookie lollipop.",
+    "address1": "London",
+    "address2": "Address 2",
+    "starRating": "3",
+    "images": [
+      {
+        "url": "https://rl-uk2.azureedge.net/picturemanager/images/OBMNG1/Hotel2.JPG"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Hotel 3 (5 stars)",
+    "description": "Etag for the win chocolate biscuit wafer soufflé toffee toffee donut. Tart biscuit wafer pudding chocolate cake oat cake halvah\r\nMarshmallow halvah gingerbread apple pie muffin biscuit. Cake pudding topping pie lemon drops lollipop. Bear claw oat cake jelly beans. Bonbon toffee caramels pudding gingerbread cookie lollipop.",
+    "address1": "Liverpool",
+    "address2": "Address 3",
+    "starRating": "5",
+    "images": [
+      {
+        "url": "https://rl-uk2.azureedge.net/picturemanager/images/OBMNG1/Hotel3.JPG"
+      }
+    ]
+  }
+]

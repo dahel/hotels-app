@@ -1,10 +1,9 @@
-import { useEffect } from 'react';
 import Skeleton from '@mui/material/Skeleton';
 import { Root, Row, ImageRow, Column } from './skeleton.styled';
 
 const HotelsSkeleton = () => {
   return (
-    <Root>
+    <Root data-testid="skeleton">
       <Row>
         <ImageRow>
           <Skeleton variant="rectangular" width={100} height={100} />

@@ -25,7 +25,7 @@ const Hotels = () => {
 
   return (
     <>
-    {true &&  <Skeleton />}
+    {pending && <Skeleton />}
       <FilterBox 
         rating={rating} 
         adultsAmount={adultsAmount} 

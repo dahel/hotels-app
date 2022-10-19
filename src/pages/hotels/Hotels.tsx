@@ -12,29 +12,29 @@ const Hotels = () => {
   const childrenAmount = +(searchParams.get('childrenAmount') || 0);
   const rating = +(searchParams.get('rating') || 3);
   const handleFilterChange = (options: FilterParams) => {
-    setSearchParams(options as unknown as {[key: string]: string });
-  }
+    setSearchParams(options as unknown as { [key: string]: string });
+  };
 
   useEffect(() => {
     fetch();
-  }, [fetch])
+  }, [fetch]);
 
   useEffect(() => {
     hotels.length && filter({ adultsAmount, childrenAmount, rating });
-  }, [filter, hotels, adultsAmount, childrenAmount, rating])
+  }, [filter, hotels, adultsAmount, childrenAmount, rating]);
 
   return (
     <>
-    {pending && <Skeleton />}
-      <FilterBox 
-        rating={rating} 
-        adultsAmount={adultsAmount} 
-        childrenAmount={childrenAmount} 
-        onChange={handleFilterChange} 
+      {pending && <Skeleton />}
+      <FilterBox
+        rating={rating}
+        adultsAmount={adultsAmount}
+        childrenAmount={childrenAmount}
+        onChange={handleFilterChange}
       />
       <HotelsList items={filteredHotels} />
     </>
-  )
-}
+  );
+};
 
 export default Hotels;

@@ -1,7 +1,7 @@
 import React from 'react';
-import {Root, RoomInfo, RoomName } from './roomDetails.styled';
+import { Root, RoomInfo, RoomName } from './roomDetails.styled';
 
-const RoomDetails = ({room}: any) => {
+const RoomDetails = ({ room }: any) => {
   return (
     <Root key={room.name}>
       <RoomInfo>
@@ -9,11 +9,9 @@ const RoomDetails = ({room}: any) => {
         <span>Adults: {room.occupancy.maxAdults}</span>
         <span>Children: {room.occupancy.maxChildren}</span>
       </RoomInfo>
-    <div>
-     {room.longDescription}
-    </div>
-  </Root>
-  )
-}
+      <div>{room.longDescription}</div>
+    </Root>
+  );
+};
 
 export default RoomDetails;

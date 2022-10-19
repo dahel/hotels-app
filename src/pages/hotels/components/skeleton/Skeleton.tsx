@@ -12,7 +12,7 @@ const HotelsSkeleton = () => {
             <Skeleton variant="rectangular" width={100} height={15} />
           </Column>
         </ImageRow>
-      
+
         <Skeleton variant="rectangular" width={100} height={30} />
       </Row>
       <Row>
@@ -28,7 +28,7 @@ const HotelsSkeleton = () => {
         </Column>
       </Row>
     </Root>
-  )
-}
+  );
+};
 
 export default HotelsSkeleton;

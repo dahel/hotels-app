@@ -1,8 +1,4 @@
 import styled from '@emotion/styled';
-import { media } from 'theme/theme';
-import Box from '@mui/material/Box';
-import Rating from '@mui/material/Rating';
-import Card from '@mui/material/Card';
 
 export const Root = styled.div`
   display: flex;

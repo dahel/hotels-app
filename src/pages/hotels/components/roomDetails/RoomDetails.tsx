@@ -1,7 +1,8 @@
 import React from 'react';
 import { Root, RoomInfo, RoomName } from './roomDetails.styled';
+import type { Room } from 'types/hotel';
 
-const RoomDetails = ({ room }: any) => {
+const RoomDetails = ({ room }: { room: Room }) => {
   return (
     <Root key={room.name}>
       <RoomInfo>

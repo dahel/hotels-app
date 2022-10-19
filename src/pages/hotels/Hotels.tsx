@@ -25,14 +25,13 @@ const Hotels = () => {
 
   return (
     <>
-      {pending && <Skeleton />}
       <FilterBox
         rating={rating}
         adultsAmount={adultsAmount}
         childrenAmount={childrenAmount}
         onChange={handleFilterChange}
       />
-      <HotelsList hotels={filteredHotels} />
+      {pending ? <Skeleton /> : <HotelsList hotels={filteredHotels} />}
     </>
   );
 };

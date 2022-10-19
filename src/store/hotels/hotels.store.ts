@@ -8,7 +8,7 @@ const getHotelFullInfo = async (hotel: Hotel): Promise<HotelWithDetails> => {
   return { ...hotel, ...data, availableRooms: [] };
 };
 
-interface BearState {
+interface HotelsState {
   pending: boolean;
   hotels: Hotel[];
   filteredHotels: HotelWithDetails[];
@@ -22,7 +22,7 @@ export interface FilterParams {
   childrenAmount: number;
 }
 
-export const useHotelsStore = create<BearState>((set, get: any) => ({
+export const useHotelsStore = create<HotelsState>((set, get) => ({
   pending: false,
   hotels: [],
   filteredHotels: [],

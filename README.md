@@ -1,3 +1,8 @@
+# Solution notes
+
+The application is deployed and accessible here: https://hotels-app-mnix-heja7ylpe-dahel.vercel.app/
+The application is build using Create React App so the description below on how to build/test is relevant
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

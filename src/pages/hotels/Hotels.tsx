@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
+import debounce from 'lodash.debounce';
 import Skeleton from './components/skeleton/Skeleton';
 import { useSearchParams } from 'react-router-dom';
 import { useHotelsStore, FilterParams } from 'store/hotels/hotels.store';
@@ -14,13 +15,14 @@ const Hotels = () => {
   const handleFilterChange = (options: FilterParams) => {
     setSearchParams(options as unknown as { [key: string]: string });
   };
+  const debounceFilter = useMemo(() => debounce(filter, 300), []);
 
   useEffect(() => {
     fetch();
   }, [fetch]);
 
   useEffect(() => {
-    hotels.length && filter({ adultsAmount, childrenAmount, rating });
+    hotels.length && debounceFilter({ adultsAmount, childrenAmount, rating });
   }, [filter, hotels, adultsAmount, childrenAmount, rating]);
 
   return (

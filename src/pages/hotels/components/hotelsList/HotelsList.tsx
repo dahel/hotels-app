@@ -5,7 +5,7 @@ import type { HotelWithDetails, Room } from 'types/hotel';
 
 const HotelsList = ({ hotels }: { hotels: HotelWithDetails[] }) => {
   return (
-    <div>
+    <>
       {hotels.map((hotel: HotelWithDetails) => {
         return (
           <Root key={hotel.id}>
@@ -28,7 +28,7 @@ const HotelsList = ({ hotels }: { hotels: HotelWithDetails[] }) => {
           </Root>
         );
       })}
-    </div>
+    </>
   );
 };
 

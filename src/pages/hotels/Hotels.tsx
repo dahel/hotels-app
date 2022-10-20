@@ -7,7 +7,7 @@ import FilterBox from './components/filterBox/FilterBox';
 import HotelsList from './components/hotelsList/HotelsList';
 import ErrorFallback from 'components/errorFallback/ErrorFallback';
 import { ErrorBoundary } from 'react-error-boundary';
-import { Root, LoadingWrapper } from './hotels.styled';
+import { Root, LoadingWrapper, NoData } from './hotels.styled';
 
 const Hotels = () => {
   const { fetch, filteredHotels, hotels, filter, pending } = useHotelsStore();
@@ -29,22 +29,21 @@ const Hotels = () => {
   }, [filter, hotels, adultsAmount, childrenAmount, rating]);
 
   return (
-   <Root>
-   <FilterBox
+    <Root>
+      <FilterBox
         rating={rating}
         adultsAmount={adultsAmount}
         childrenAmount={childrenAmount}
         onChange={handleFilterChange}
       />
       <ErrorBoundary FallbackComponent={ErrorFallback} onReset={fetch}>
-      <LoadingWrapper>
-        { pending && <LinearProgress data-testid="loading" />}
-      </LoadingWrapper>
+        <LoadingWrapper>{pending && <LinearProgress data-testid="loading" />}</LoadingWrapper>
         <HotelsList hotels={filteredHotels} />
-        {!pending && !filteredHotels.length && <div>No rooms available for selected filters</div>}
+        {!pending && !filteredHotels.length && (
+          <NoData>No rooms available for selected filters</NoData>
+        )}
       </ErrorBoundary>
-   </Root>
-      
+    </Root>
   );
 };
 

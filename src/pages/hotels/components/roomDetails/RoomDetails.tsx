@@ -9,7 +9,7 @@ const RoomDetails = ({ room }: { room: Room }) => {
         <span>Adults: {room.occupancy.maxAdults}</span>
         <span>Children: {room.occupancy.maxChildren}</span>
       </RoomInfo>
-      <div>{room.longDescription}</div>
+      {room.longDescription}
     </Root>
   );
 };

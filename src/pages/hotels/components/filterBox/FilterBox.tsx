@@ -1,6 +1,6 @@
 import Rating from '@mui/material/Rating';
 import Counter from '../counter/Counter';
-import { Row } from './filterBox.styled';
+import { Root } from './filterBox.styled';
 
 export interface FilterBoxProps {
   onChange: (value: Omit<FilterBoxProps, 'onChange'>) => void;
@@ -20,7 +20,7 @@ const FilterBox = ({ onChange, rating, adultsAmount, childrenAmount }: FilterBox
   };
 
   return (
-    <Row>
+    <Root>
       <Rating
         size="large"
         value={rating}
@@ -33,13 +33,13 @@ const FilterBox = ({ onChange, rating, adultsAmount, childrenAmount }: FilterBox
         value={adultsAmount}
         onChange={(value) => handleChange('adultsAmount', value)}
         minValue={1}
-      ></Counter>
+      />
       <Counter
         label="Children"
         value={childrenAmount}
         onChange={(value) => handleChange('childrenAmount', value)}
-      ></Counter>
-    </Row>
+      />
+    </Root>
   );
 };
 

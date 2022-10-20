@@ -9,3 +9,7 @@ export const LoadingWrapper = styled.div`
   margin: 0 auto;
   height: 4px;
 `;
+
+export const NoData = styled.div`
+  text-align: center;
+`;

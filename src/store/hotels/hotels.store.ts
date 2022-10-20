@@ -38,21 +38,25 @@ export const useHotelsStore = create<HotelsState>((set, get) => ({
     set({ pending: true });
 
     const hotelsWithRating = get().hotels.filter((hotel: Hotel) => +hotel.starRating >= rating);
-    const hotelsFullInfo: Awaited<Promise<HotelWithDetails[]>> = await Promise.all(
-      hotelsWithRating.map(getHotelFullInfo)
-    );
-    const filteredHotels = hotelsFullInfo.reduce(
-      (result: HotelWithDetails[], hotelFullInfo: HotelWithDetails) => {
-        const availableRooms = hotelFullInfo.rooms.filter(
-          ({ occupancy }) =>
-            occupancy.maxAdults >= adultsAmount && occupancy.maxChildren >= childrenAmount
-        );
 
-        return availableRooms.length ? [...result, { ...hotelFullInfo, availableRooms }] : result;
-      },
-      [] as HotelWithDetails[]
-    );
+    // setTimeout(async () => {
+      const hotelsFullInfo: Awaited<Promise<HotelWithDetails[]>> = await Promise.all(
+        hotelsWithRating.map(getHotelFullInfo)
+      );
+      const filteredHotels = hotelsFullInfo.reduce(
+        (result: HotelWithDetails[], hotelFullInfo: HotelWithDetails) => {
+          const availableRooms = hotelFullInfo.rooms.filter(
+            ({ occupancy }) =>
+              occupancy.maxAdults >= adultsAmount && occupancy.maxChildren >= childrenAmount
+          );
+  
+          return availableRooms.length ? [...result, { ...hotelFullInfo, availableRooms }] : result;
+        },
+        [] as HotelWithDetails[]
+      );
+  
+      set({ pending: false, filteredHotels });
+    // }, 500)
 
-    set({ pending: false, filteredHotels });
   }
 }));

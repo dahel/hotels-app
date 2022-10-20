@@ -1,4 +1,3 @@
-import React from 'react';
 import { Root, RoomInfo, RoomName } from './roomDetails.styled';
 import type { Room } from 'types/hotel';
 

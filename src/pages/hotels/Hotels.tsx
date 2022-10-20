@@ -1,12 +1,13 @@
 import { useEffect, useMemo } from 'react';
 import debounce from 'lodash.debounce';
-import Skeleton from './components/skeleton/Skeleton';
+import LinearProgress from '@mui/material/LinearProgress';
 import { useSearchParams } from 'react-router-dom';
 import { useHotelsStore, FilterParams } from 'store/hotels/hotels.store';
 import FilterBox from './components/filterBox/FilterBox';
 import HotelsList from './components/hotelsList/HotelsList';
 import ErrorFallback from 'components/errorFallback/ErrorFallback';
 import { ErrorBoundary } from 'react-error-boundary';
+import { Root, LoadingWrapper } from './hotels.styled';
 
 const Hotels = () => {
   const { fetch, filteredHotels, hotels, filter, pending } = useHotelsStore();
@@ -28,7 +29,7 @@ const Hotels = () => {
   }, [filter, hotels, adultsAmount, childrenAmount, rating]);
 
   return (
-   <>
+   <Root>
    <FilterBox
         rating={rating}
         adultsAmount={adultsAmount}
@@ -36,10 +37,13 @@ const Hotels = () => {
         onChange={handleFilterChange}
       />
       <ErrorBoundary FallbackComponent={ErrorFallback} onReset={fetch}>
-        {pending ? <Skeleton /> : <HotelsList hotels={filteredHotels} />}
+      <LoadingWrapper>
+        { pending && <LinearProgress data-testid="loading" />}
+      </LoadingWrapper>
+        <HotelsList hotels={filteredHotels} />
         {!pending && !filteredHotels.length && <div>No rooms available for selected filters</div>}
       </ErrorBoundary>
-   </>
+   </Root>
       
   );
 };

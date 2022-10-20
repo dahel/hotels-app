@@ -36,7 +36,7 @@ describe('Hotels page', () => {
       </Router>
     );
 
-    await waitForElementToBeRemoved(screen.queryByTestId('skeleton'));
+    await waitForElementToBeRemoved(screen.queryByTestId('loading'));
 
     expect(screen.queryByText(/hotel 1 \(2 stars\)/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/hotel 2 \(3 stars\)/i)).not.toBeInTheDocument();
@@ -52,7 +52,7 @@ describe('Hotels page', () => {
       </Router>
     );
 
-    await waitForElementToBeRemoved(screen.queryByTestId(/skeleton/i));
+    await waitForElementToBeRemoved(screen.queryByTestId('loading'));
 
     expect(screen.getByText(/hotel 1 \(2 stars\)/i)).toBeInTheDocument();
     expect(screen.queryByText(/hotel 2 \(3 stars\)/i)).not.toBeInTheDocument();

@@ -18,7 +18,7 @@ const Hotels = () => {
   const handleFilterChange = (options: FilterParams) => {
     setSearchParams(options as unknown as { [key: string]: string });
   };
-  const debounceFilter = useMemo(() => debounce(filter, 300), []);
+  const debounceFilter = useMemo(() => debounce(filter, 200), []);
 
   useEffect(() => {
     fetch();

@@ -10,7 +10,7 @@ const HotelsList = ({ hotels }: { hotels: HotelWithDetails[] }) => {
           <Root key={hotel.id}>
             <CardStyled>
               <Row>
-                <Image src={hotel.images[0].url} alt={'todo generate it'} />
+                <Image src={hotel.images[0]?.url} alt="" />
                 <div>
                   <Name>{hotel.name}</Name>
                   <Address>{hotel.address1}</Address>

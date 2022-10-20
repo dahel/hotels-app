@@ -5,6 +5,8 @@ import { useSearchParams } from 'react-router-dom';
 import { useHotelsStore, FilterParams } from 'store/hotels/hotels.store';
 import FilterBox from './components/filterBox/FilterBox';
 import HotelsList from './components/hotelsList/HotelsList';
+import ErrorFallback from 'components/errorFallback/ErrorFallback';
+import { ErrorBoundary } from 'react-error-boundary';
 
 const Hotels = () => {
   const { fetch, filteredHotels, hotels, filter, pending } = useHotelsStore();
@@ -26,15 +28,19 @@ const Hotels = () => {
   }, [filter, hotels, adultsAmount, childrenAmount, rating]);
 
   return (
-    <>
-      <FilterBox
+   <>
+   <FilterBox
         rating={rating}
         adultsAmount={adultsAmount}
         childrenAmount={childrenAmount}
         onChange={handleFilterChange}
       />
-      {pending ? <Skeleton /> : <HotelsList hotels={filteredHotels} />}
-    </>
+      <ErrorBoundary FallbackComponent={ErrorFallback} onReset={fetch}>
+        {pending ? <Skeleton /> : <HotelsList hotels={filteredHotels} />}
+        {!pending && !filteredHotels.length && <div>No rooms available for selected filters</div>}
+      </ErrorBoundary>
+   </>
+      
   );
 };
 
